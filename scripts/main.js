@@ -8,6 +8,7 @@ var Route = ReactRouter.Route;
 var Navigation = ReactRouter.Navigation;
 var createBrowserHistory = require('history/lib/createBrowserHistory');
 
+var h = require('./helpers.js');
 // App
 
 var App = React.createClass({
@@ -43,7 +44,6 @@ var Header = React.createClass({
         </h3>
       </header>
     )
-
   }
 });
 
@@ -55,7 +55,6 @@ var Order = React.createClass({
     return (
       <p>Order</p>
     )
-
   }
 });
 
@@ -67,7 +66,6 @@ var Inventory = React.createClass({
     return (
       <p>Inventory</p>
     )
-
   }
 });
 
@@ -77,17 +75,15 @@ var Inventory = React.createClass({
 */
 
 var StorePicker = React.createClass({
-
   render : function(){
     return (
       <form className="store-selector">
         <h2> Please Enter A Store </h2>
-        <input type="text" ref='storeId' required />
+        <input type="text" ref='storeId' defaultValue={h.getFunName()} required />
         <input type="Submit" />
       </form>
     )
   }
-
 });
 
 // Not Found
